@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-babel-english
 Version:	20131013
-Release:	3
+Release:	4
 Summary:	TeXLive babel-english package
 Group:		Publishing
 URL:		http://tug.org/texlive
