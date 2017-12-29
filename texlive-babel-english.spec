@@ -5,7 +5,7 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-babel-english
-Version:	20170606
+Version:	3.3r
 Release:	1
 Summary:	TeXLive babel-english package
 Group:		Publishing
