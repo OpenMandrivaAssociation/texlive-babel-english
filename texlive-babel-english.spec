@@ -5,8 +5,8 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-babel-english
-Version:	20131013
-Release:	9
+Version:	20170606
+Release:	1
 Summary:	TeXLive babel-english package
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -32,7 +32,8 @@ TeXLive babel-english package.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/generic/babel-english/english.ldf
+%{_texmfdistdir}/tex/generic/babel-english/*.ldf
+%doc %{_texmfdistdir}/doc/generic/babel-english/README
 %doc %{_texmfdistdir}/doc/generic/babel-english/english.pdf
 #- source
 %doc %{_texmfdistdir}/source/generic/babel-english/english.dtx
