@@ -1,6 +1,6 @@
 Name:		texlive-babel-english
-Version:	44495
-Release:	2
+Version:	70799
+Release:	1
 Summary:	TeXLive babel-english package
 Group:		Publishing
 URL:		http://tug.org/texlive
