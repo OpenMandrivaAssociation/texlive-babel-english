@@ -3,7 +3,7 @@ Version:	70799
 Release:	1
 Summary:	TeXLive babel-english package
 Group:		Publishing
-URL:		http://tug.org/texlive
+URL:		https://tug.org/texlive
 License:	http://www.tug.org/texlive/LICENSE.TL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-english.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-english.doc.r%{version}.tar.xz
