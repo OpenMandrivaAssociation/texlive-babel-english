@@ -1,45 +1,27 @@
-Name:		texlive-babel-english
-Version:	70799
-Release:	1
-Summary:	TeXLive babel-english package
+%global tl_name babel-english
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	3.3r
+Release:	%{tl_revision}.1
+Summary:	Babel support for English
 Group:		Publishing
-URL:		https://tug.org/texlive
-License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-english.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-english.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-english.source.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/babel-contrib/english
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-english.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-english.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-english.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Requires:	texlive(hyphen-english)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-TeXLive babel-english package.
+The package provides the language definition file for support of English
+in babel. Care is taken to select british hyphenation patterns for
+British English and Australian text, and default ('american') patterns
+for Canadian and USA text.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/generic/babel-english/*.ldf
-%doc %{_texmfdistdir}/doc/generic/babel-english/README
-%doc %{_texmfdistdir}/doc/generic/babel-english/english.pdf
-#- source
-%doc %{_texmfdistdir}/source/generic/babel-english/english.dtx
-%doc %{_texmfdistdir}/source/generic/babel-english/english.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
